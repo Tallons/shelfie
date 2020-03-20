@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import{Link} from "react-router-dom";
  
 class Form extends React.Component{
   constructor(props){
@@ -8,20 +9,22 @@ class Form extends React.Component{
       name: "",
       price: 0,
       img: "",
+      id: null,
+      isEditing: false
     }
 
-    this.handleChange = this.handleChange.bind(this)
-    // this.addProduct = this.addProduct.bind(this)
-    
+  }
+  componentDidMount(){
+    console.log(this.props)
+    const {id} = this.props.match.params
+    if(this.props.match.params.id){
+      axios.get(`/api/inventory/${id}`).then(({data}) => {
+        this.setState({name: data[0].name, price: data[0].price, img: data[0].img, isEditing: true})
+      }).catch(err => console.log(err));
+    }
   }
 
-  componentDidUpdate(preProps){
-    console.log(preProps, this.props)
-    if(this.props.id && preProps.id !== this.props.id){
-      console.log(this.props.selected.name)
-        this.setState({ name: this.props.selected.name, price: this.props.selected.price , img: this.props.selected.img})
-      }
-  }
+
 
   handleChange(event){
     console.log(event.target.value)
@@ -31,7 +34,7 @@ class Form extends React.Component{
 
   addProduct(){
     const {name, price, img} = this.state
-    axios.post("/api/inventory/", {name, price, image:img}).then(res => {
+    axios.post("/api/inventory/", {name, price, img}).then(res => {
     this.props.getInventory()
     console.log(res.data)
     }).catch(err => console.log(err));
@@ -40,13 +43,13 @@ class Form extends React.Component{
   editProduct(id){
     const {name, price, img} = this.state
     axios.put(`/api/inventory/${id}`, {name, price, img}).then(res => {
-      this.setState({ inventory: res.data });
+      console.log(res.data );
     })
     .catch(err => console.log(err));
   }
 
   render(){
-    const {isEditing} = this.props
+    const {isEditing} = this.state
     console.log (isEditing)
     return(
       <section className="create-product-side">
@@ -62,14 +65,18 @@ class Form extends React.Component{
           <input className="input-create" 
               onChange={event => this.handleChange(event)} placeholder ="price"  value={this.state.price}></input>
           <div className="button-container">
-
-            <button >Cancel</button> {/* this should reset the input step 1:5 */}
+            
+            <button onClick={()=> this.props.history.goBack()} >Cancel</button> {/* this should reset the input step 1:5 */}
             
               {
               isEditing ? 
-                <button onClick={()=> {  this.editProduct(this.props.id) }}>Save Changes</button>
+              <Link to="/">
+                <button onClick={()=> { this.editProduct(this.props.match.params.id) }}>Save Changes</button>
+                </Link>
               :
+              <Link to="/">
                 <button onClick={()=> {  this.addProduct() }}>Add to inventory</button>
+              </Link>
               }
 
           </div>

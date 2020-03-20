@@ -4,3 +4,4 @@ CREATE TABLE products (
     price  INT,
     img VARCHAR(3000)
     );
+

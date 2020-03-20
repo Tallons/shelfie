@@ -1,16 +1,17 @@
 module.exports = {
   getInventory: (req, res) => {
     const db = req.app.get("db")
+    console.log("HIT")
       db.get_inventory().then(result => {
         res.status(200).send(result)
       })
   },
 
   getProduct: (req, res) => {
-    const db = req.app.get("db"),
-          {id} = req.body;
+    const db = req.app.get("db")
+        const  {id} = req.params;
       db.get_product(id).then(result => {
-        res(200).send(result)
+        res.status(200).send(result)
       })
   },
 
@@ -39,6 +40,5 @@ module.exports = {
       res.status(200).send(result)
     })
   },
-
-
 }
+

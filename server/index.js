@@ -5,7 +5,6 @@ const express = require("express"),
       {SERVER_PORT, CONNECTION_STRING} = process.env,
       ctrl = require("./controller")
 
-
 app.use(express.json());
 
 app.listen(SERVER_PORT, console.log("Running on " + SERVER_PORT));
@@ -22,3 +21,5 @@ app.get("/api/inventory/:id", ctrl.getProduct)
 app.post("/api/inventory", ctrl.addProduct)
 app.put("/api/inventory/:id", ctrl.updateProduct)
 app.delete("/api/inventory/:id", ctrl.deleteProduct)
+
+

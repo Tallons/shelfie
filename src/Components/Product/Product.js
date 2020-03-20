@@ -1,6 +1,7 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
-function Product ({id, index, name, price, image, editProduct, deleteProduct, toggleEdit}){
+function Product ({id, name, price, image, deleteProduct}){
 
   return(
     <div className="tab">
@@ -12,8 +13,10 @@ function Product ({id, index, name, price, image, editProduct, deleteProduct, to
           <h3>{price}</h3>
         </div>
         <div className="button-container">
-          <button onClick={()=> deleteProduct(id)}>Delete</button> {/* this should reset the input step 1:5 */}
-          <button onClick={()=>  toggleEdit(index)}>Edit</button>
+          <button onClick={()=> deleteProduct(id)}>Delete</button>
+          <Link to={`/edit/${id}`}>
+          <button>Edit</button>
+          </Link>
         </div>
       </div>
       

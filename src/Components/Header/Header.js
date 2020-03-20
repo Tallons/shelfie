@@ -1,4 +1,5 @@
 import React from "react"
+import {Link, Switch, Route} from "react-router-dom"
 
 function Header (){
   return(
@@ -7,6 +8,14 @@ function Header (){
         <img className="logo" src="" />
         SHELFIE
       </header>
+      <nav>
+        <Link to="/">
+        <span>Dashboard</span>
+        </Link>
+        <Link to="/add">
+        <span>Add Inventory</span>
+        </Link>
+      </nav>
 
     </div>
   )
