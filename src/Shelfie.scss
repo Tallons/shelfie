@@ -1,0 +1,139 @@
+$header-color: #AB2A19;
+$primary-color: #D34735;
+$contrast-color: #3AD886;
+
+%column{
+display: flex;
+flex-direction: column;
+}
+
+*{
+  margin: 0;
+}
+/* ------------------------ */
+header{
+  height: 50px;
+  background-color: $header-color;
+  color: whitesmoke;
+  display: flex;
+
+
+  div{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .logo{
+      height: 40px;
+      width: 40px;
+    }
+  }
+  
+  nav{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    a { // Link
+      text-decoration: none;
+      border: 2px solid $primary-color;
+      background-color: $primary-color;
+      text-decoration: none;
+      text-decoration-style: none;
+      padding: 4px;
+      border-radius: 6px;
+      color:black;
+      &:hover{
+        border: 2px solid $contrast-color;
+        background-color: $contrast-color;
+        color:white;
+        font-weight: bold;
+      }
+    }
+
+
+    }
+
+  }
+
+
+.main{
+  height: 650px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .product-lineup{
+    @extend %column;
+    margin-top: 30px;
+  }
+
+  .tab{
+    width:450px;
+    height: 175px;
+    display: flex;
+    align-items: center;
+    background-color: $primary-color;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin: 20px 50px 0 0;
+    .img-container{
+      height: 80%;
+      width: 40%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+        img{
+          height: 140px;
+          width: 140px;
+        }
+     }
+      .product-description{
+        @extend %column;
+        width: 50%;
+        height: 80%;
+        margin: 15px;
+        div{
+          height:70px;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    .create-product-side{
+      @extend %column;
+      width: 30%;
+      .input-create{
+        width: 75%;
+      }
+      .create-product-box{
+        height: 500px;
+        width: 400px;
+        padding: 20px 20px 20px 40px;
+        margin-top: 50px;
+        background-color: $contrast-color;
+        border-radius: 6px;
+        box-sizing: border-box;
+
+        img{
+          height:50%;
+          width: 80%;
+        }
+
+      }
+    }
+    .button-container{
+      height:50px;
+      font-size: 5px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      width:80%;
+      button{
+        height: 30px;
+        border-radius: 6px;
+        background-color: $contrast-color;
+      }
+    }
+
+}

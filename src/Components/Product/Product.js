@@ -5,7 +5,9 @@ function Product ({id, name, price, image, deleteProduct}){
 
   return(
     <div className="tab">
+      <div className="img-container">
       <img src={image} alt={name}/>
+      </div>
 
       <div className="product-description">
         <div>
@@ -18,6 +20,7 @@ function Product ({id, name, price, image, deleteProduct}){
           <button>Edit</button>
           </Link>
         </div>
+
       </div>
       
     </div>

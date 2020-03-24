@@ -2,7 +2,7 @@ import React from 'react';
 import{HashRouter, Link } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Routes from "./routes";
-import './App.css';
+import './Shelfie.css';
 
 
 
@@ -23,7 +23,7 @@ import './App.css';
     return (
       <HashRouter>
 
-      <div className="App">
+      <div className="app">
         <Header />
         <div className="main">
               

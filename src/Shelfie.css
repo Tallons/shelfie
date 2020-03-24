@@ -1,0 +1,182 @@
+.main .product-lineup, .main .tab .product-description, .main .create-product-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* {
+  margin: 0;
+}
+
+/* ------------------------ */
+header {
+  height: 50px;
+  background-color: #AB2A19;
+  color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header div {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+header div .logo {
+  height: 40px;
+  width: 40px;
+}
+
+header nav {
+  width: 250px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+header nav a {
+  text-decoration: none;
+  border: 2px solid #D34735;
+  background-color: #D34735;
+  text-decoration: none;
+  -webkit-text-decoration-style: none;
+          text-decoration-style: none;
+  padding: 4px;
+  border-radius: 6px;
+  color: black;
+}
+
+header nav a:hover {
+  border: 2px solid #3AD886;
+  background-color: #3AD886;
+  color: white;
+  font-weight: bold;
+}
+
+.main {
+  height: 650px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .product-lineup {
+  margin-top: 30px;
+}
+
+.main .tab {
+  width: 450px;
+  height: 175px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #D34735;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 6px;
+  margin: 20px 50px 0 0;
+}
+
+.main .tab .img-container {
+  height: 80%;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .tab .img-container img {
+  height: 140px;
+  width: 140px;
+}
+
+.main .tab .product-description {
+  width: 50%;
+  height: 80%;
+  margin: 15px;
+}
+
+.main .tab .product-description div {
+  height: 70px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main .create-product-side {
+  width: 30%;
+}
+
+.main .create-product-side .input-create {
+  width: 75%;
+}
+
+.main .create-product-side .create-product-box {
+  height: 500px;
+  width: 400px;
+  padding: 20px 20px 20px 40px;
+  margin-top: 50px;
+  background-color: #3AD886;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main .create-product-side .create-product-box img {
+  height: 50%;
+  width: 80%;
+}
+
+.main .button-container {
+  height: 50px;
+  font-size: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+}
+
+.main .button-container button {
+  height: 30px;
+  border-radius: 6px;
+  background-color: #3AD886;
+}
+/*# sourceMappingURL=Shelfie.css.map */
