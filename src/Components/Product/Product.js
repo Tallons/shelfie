@@ -12,7 +12,7 @@ function Product ({id, name, price, image, deleteProduct}){
       <div className="product-description">
         <div>
           <h3>{name}</h3>
-          <h3>{price}</h3>
+          <h3>{price} Coins</h3>
         </div>
         <div className="button-container">
           <button onClick={()=> deleteProduct(id)}>Delete</button>

@@ -51,21 +51,19 @@ header{
         font-weight: bold;
       }
     }
-
-
-    }
-
   }
-
+}
 
 .main{
   height: 650px;
   width: 100%;
   display: flex;
   justify-content: center;
+
   .product-lineup{
     @extend %column;
     margin-top: 30px;
+    width:70%;
   }
 
   .tab{
@@ -102,7 +100,7 @@ header{
 
     .create-product-side{
       @extend %column;
-      width: 30%;
+      width: 70%;
       .input-create{
         width: 75%;
       }
@@ -116,7 +114,7 @@ header{
         box-sizing: border-box;
 
         img{
-          height:50%;
+          height:60%;
           width: 80%;
         }
 

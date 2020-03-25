@@ -1,7 +1,7 @@
 module.exports = {
   getInventory: (req, res) => {
     const db = req.app.get("db")
-    console.log("HIT")
+    // console.log("HIT")
       db.get_inventory().then(result => {
         res.status(200).send(result)
       })
